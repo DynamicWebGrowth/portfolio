@@ -228,10 +228,15 @@
                         <div class="text-center">
                             <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                             <h4 class="font-weight-light mb-4">{{ $review->description }}</h4>
-                            <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ asset("storage/$review->image") }}" style="width: 80px; height: 80px;">
-                            <h5 class="font-weight-bold m-0">{{ $review->name }} </h5>
+                            
+                            @if ($review->image && Storage::exists($review->image))
+                                <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ asset("storage/$review->image") }}" style="width: 80px; height: 80px;">
+
+                            @endif   
+                            <h5 class="font-weight-bold m-0">{{ $review->name }}</h5>
                             <span>{{ $review->job }}</span>
                         </div>
+                        
                     @endforeach
                     </div>
                 </div>
