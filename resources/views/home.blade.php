@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{ asset("storage/$user?->profile_pic") }}" alt="">
+                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="{{ asset("import/assets/app/$user?->profile_pic") }}" alt="">
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">I'm</h3>
@@ -315,15 +315,16 @@
                 <a class="btn btn-light btn-social mr-2" href="{{ $setting->github_url }}"><i class="fab fa-github"></i></a>
                 <a class="btn btn-light btn-social mr-2" href="{{ $setting->fb_url }}"><i class="fab fa-facebook-f"></i></a>
                 <a class="btn btn-light btn-social mr-2" href="{{ $setting->linkedin_url }}"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="{{ $setting->freelance_url }}"><i class="fa fa-paper-plane"></i></a>
             </div>
             <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
+                <a class="text-white" href="{{ route('privacy') }}">Privacy</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
+                <a class="text-white" href="{{ route('terms') }}">Terms</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
+                <a class="text-white" href="{{ route('faqs') }}"">FAQs</a>
                 <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
+                <a class="text-white" href="{{ route('help') }}">Help</a>
             </div>
             <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#"></a>DynamicWebGrowth. All Rights Reserved. Designed by <a class="text-white font-weight-bold" href="#">dynamicwebgrowth</a>
             </p>

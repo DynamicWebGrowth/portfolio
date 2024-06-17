@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\ContactController;
@@ -47,4 +48,16 @@ Route::middleware(['auth','isAdmin'])->name('admin.')->prefix('/admin')->group(f
     Route::resource('/setting', SettingController::class);
 });
 
+#route groupe
+Route::prefix('pages')->group(function(){
+
+    Route::get('/terms', [PageController::class, 'terms'])->name('terms');
+    Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
+    Route::get('/help', [PageController::class, 'help'])->name('help');
+});
+Route::get('/privacy', [PageController::class, 'privacy'])->name('privacy');
+
 Auth::routes();
+
+
+
