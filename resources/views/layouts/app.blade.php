@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{{ config('app.name', 'Vishvas\'s Portfolio') }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
@@ -30,8 +30,9 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <!-- Navbar Start -->
+
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
+        <a href="{{ route('home') }}" class="navbar-brand ml-lg-3">
             <h1 class="m-0 display-5"><span class="text-primary">Dynamic </span>Web Growth</h1>
         </a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -48,29 +49,33 @@
                 <a href="#testimonial" class="nav-item nav-link">Review</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
+            <a href="#contact" class="btn btn-outline-primary d-none d-lg-block">Hire Me</a>
         </div>
     </nav>
+ 
     <!-- Navbar End -->
 
+    <!-- Main Content Start -->
     @yield('content')
+    <!-- Main Content End -->
 
-       <!-- JavaScript Libraries -->
-       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-       <script src="{{ asset('import/assets/lib/typed/typed.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/easing/easing.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/waypoints/waypoints.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/lightbox/js/lightbox.min.js') }}"></script>
+    <!-- JavaScript Libraries -->
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('import/assets/lib/typed/typed.min.js') }}"></script>
+    <script src="{{ asset('import/assets/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('import/assets/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('import/assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('import/assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('import/assets/lib/lightbox/js/lightbox.min.js') }}"></script>
 
-       <!-- Contact Javascript File -->
-       <script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
-       <script src="{{ asset('import/assets/mail/contact.js') }}"></script>
+    <!-- Contact Javascript File -->
+    <script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
+    <script src="{{ asset('import/assets/mail/contact.js') }}"></script>
 
-       <!-- Template Javascript -->
-       <script src="{{ asset('import/assets/js/main.js') }}"></script>
-   </body>
+    <!-- Template Javascript -->
+    <script src="{{ asset('import/assets/js/main.js') }}"></script>
+</body>
 
-   </html>
+</html>
