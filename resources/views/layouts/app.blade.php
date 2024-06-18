@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>{{ config('app.name', 'Vishvas\'s Portfolio') }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
