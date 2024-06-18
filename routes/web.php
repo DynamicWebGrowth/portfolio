@@ -49,12 +49,13 @@ Route::middleware(['auth','isAdmin'])->name('admin.')->prefix('/admin')->group(f
 });
 
 #route groupe
-Route::prefix('pages')->group(function(){
+Route::prefix('/pages')->group(function(){
     Route::get('/terms', [PageController::class, 'terms'])->name('terms');
     Route::get('/faqs', [PageController::class, 'faqs'])->name('faqs');
     Route::get('/help', [PageController::class, 'help'])->name('help');
+    Route::get('privacy', [PageController::class, 'privacy'])->name('privacy');
 });
-Route::get('privacy', [PageController::class, 'privacy'])->name('privacy');
+
 
 Auth::routes();
 
